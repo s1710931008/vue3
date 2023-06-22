@@ -18,12 +18,25 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+        // 配置elementPlus採用sass樣式配色系統
+        ElementPlusResolver({ importStyle:"sass"}),
+      ],
     }),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  css:{
+    preprocessorOptions:{
+      scss:{
+        //自動導入自定制樣式文件
+        additionalData:`
+          @use "@/styles/element/index.scss" as *;
+        `,
+      }
     }
   }
 })
