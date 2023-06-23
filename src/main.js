@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import '@/styles/common.scss'
 
 //測試接口函數
 import {getCategory} from '@/apis/testApi'
