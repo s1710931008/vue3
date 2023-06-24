@@ -4,8 +4,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '@/views/Layout/index.vue';
 import Login from '@/views/Login/index.vue';
-// import Home from '@/views/Home/index.vue'
-// import Category from '@/views/Category/index.vue';
+import Home from '@/views/Home/index.vue'
+import Category from '@/views/Category/index.vue';
 
 
 const router = createRouter({
@@ -16,16 +16,16 @@ const router = createRouter({
       path: '/',
       // name: 'home',
       component: Layout,
-      // children:[
-      //   {
-      //     path: '',
-      //     component: Home,
-      //   },
-      //   {
-      //     path: 'catogory',
-      //     component: Category,
-      //   }
-      // ]
+      children:[
+        {
+          path: '',
+          component: Home,
+        },
+        {
+          path: 'catogory',
+          component: Category,
+        }
+      ]
     },
     {
       path: '/login',

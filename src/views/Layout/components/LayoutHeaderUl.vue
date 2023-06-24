@@ -5,6 +5,7 @@ const categoryStore = useCategoryStore()
 
 
 <template>
+<div>
     <ul class="app-header-nav">
         <li class="home">
             <RouterLink to="/">首页</RouterLink>
@@ -15,6 +16,8 @@ const categoryStore = useCategoryStore()
             </RouterLink>
         </li>
     </ul>
+</div>
+
 </template>
 
 
