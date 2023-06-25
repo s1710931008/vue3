@@ -1,6 +1,25 @@
 <script setup>
 import { useCategoryStore } from '@/stores/categoryStore'
 const categoryStore = useCategoryStore()
+
+  import { onMounted, ref } from 'vue'
+  import { getCategoryAPI } from '@/apis/layout'
+  
+  const categoryList = ref([])
+
+  const getCategory = async () => {
+    const res = await getCategoryAPI()
+    console.log(res)
+    categoryList.value = res.result
+  }
+  onMounted(()=>{
+    getCategory
+  })
+
+  getCategory().then(res=>{
+    console.log(res)
+})
+
 </script>
 
 
