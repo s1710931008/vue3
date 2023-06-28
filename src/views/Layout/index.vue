@@ -1,8 +1,10 @@
 <script setup>
-import LayoutNavr from './components/LayoutNar.vue'
+import LayoutNav from './components/LayoutNav.vue'
 import LayoutHeader from './components/LayoutHeader.vue'
 import LayoutFooter from './components/LayoutFooter.vue'
 import LayoutFixed from './components/LayoutFixed.vue'
+
+//触發獲取導旅列表的action
 import { useCategoryStore } from '@/stores/category'
 import { onMounted } from 'vue'
 
@@ -12,11 +14,9 @@ onMounted(()=> categoryStore.getCategory())
 </script>
 
 <template>
-  <LayoutFixed />   
-  <LayoutNavr />
-  <br><br><br>
-  <LayoutHeader />
-  <RouterView />
-   <br><br>
-  <LayoutFooter />
+    <LayoutFixed/>
+    <LayoutNav />
+    <LayoutHeader />
+    <RouterView />
+    <LayoutFooter /> 
 </template>

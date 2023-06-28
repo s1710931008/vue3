@@ -1,7 +1,9 @@
 <script setup>
 //vueUse
 import { useScroll } from '@vueuse/core'
+//使用pinia中的數據
 import{useCategoryStore} from '@/stores/category'
+
 const { y } = useScroll(window)
 
 const categoryStore = useCategoryStore()
@@ -9,17 +11,18 @@ const categoryStore = useCategoryStore()
 </script>
 
 <template>
-  <div class="app-header-sticky :class={show:y>78}">
-      {{y}}
+  <div class="app-header-sticky" :class="{ show: y > 78 }">
     <div class="container">
       <RouterLink class="logo" to="/" />
       <!-- 导航区域 -->
       <ul class="app-header-nav ">
-        <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
-          <RouterLink to="/">{{item.name}}</RouterLink>
+        <li class="home">
+          <RouterLink to="/">首页</RouterLink>
+        </li>
+       <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
+          <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         </li>
       </ul>
-
       <div class="right">
         <RouterLink to="/">品牌</RouterLink>
         <RouterLink to="/">专题</RouterLink>
