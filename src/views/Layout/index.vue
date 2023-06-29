@@ -14,8 +14,11 @@ onMounted(()=> categoryStore.getCategory())
 </script>
 
 <template>
+
     <LayoutFixed/>
+<div style="height:1100px;">
     <LayoutNav />
+</div>
     <LayoutHeader />
     <RouterView />
     <LayoutFooter /> 

@@ -22,7 +22,7 @@
   height: 500px;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 1230px;
   z-index: 98;
 
   img {
