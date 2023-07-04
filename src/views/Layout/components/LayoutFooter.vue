@@ -73,7 +73,7 @@
     background: #fff;
 
     .container {
-      padding: 60px 0 40px 25px;
+      padding: -60px 0px 40px 25px;
       display: flex;
     }
 
